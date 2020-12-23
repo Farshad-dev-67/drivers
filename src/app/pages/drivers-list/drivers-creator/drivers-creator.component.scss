@@ -1,0 +1,24 @@
+.container{
+  font-family: IRANSansWeb;
+}
+@media (max-width: 961px){
+  .row{
+    width: 220%;
+    display: flex;
+    margin-left: 230%;
+  }
+}
+@media (max-width: 600px){
+  .row{
+    width: 200%;
+    display: flex;
+    margin-left: 160%;
+  }
+}
+@media (max-width: 577px){
+  .row{
+    width: 100%;
+    display: flex;
+    margin-left: 160%;
+  }
+}

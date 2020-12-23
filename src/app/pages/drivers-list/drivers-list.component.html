@@ -1,0 +1,55 @@
+<div class="example-container mat-elevation-z8">
+  <div class="align-Btn">
+    <button type="button" class="btn btn-primary" [routerLink]="'/drivers-creator'">اضافه</button>
+    <button type="button" class="btn btn-warning mr-2">ویرایش</button>
+    <button type="button" class="btn btn-danger mr-2">حذف</button>
+  </div>
+  <mat-table #table [dataSource]="dataSource" dir="rtl">
+    <!-- Position Column -->
+    <ng-container matColumnDef="نام">
+      <mat-header-cell *matHeaderCellDef>نام</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span class="mobile-label">نام : </span>
+        {{element.name}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="ایمیل">
+      <mat-header-cell *matHeaderCellDef>ایمیل</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span class="mobile-label">ایمیل : </span>
+        {{element.email}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="شرکت">
+      <mat-header-cell *matHeaderCellDef>شرکت</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span class="mobile-label">شرکت : </span>
+        {{element.company.name}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="آدرس">
+      <mat-header-cell *matHeaderCellDef>آدرس</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span class="mobile-label">آدرس : </span>
+        {{element.address.city}}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="تلفن">
+      <mat-header-cell *matHeaderCellDef>تلفن</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span class="mobile-label">تلفن : </span>
+        {{element.phone}}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

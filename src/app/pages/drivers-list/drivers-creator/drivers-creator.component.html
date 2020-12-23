@@ -1,0 +1,271 @@
+<div class="container mt-5" dir="rtl">
+  <form [formGroup]="registerForm">
+
+    <div class="row">
+      <!--start::Form group-->
+      <div class="form-group  col-lg-6 col-md-6 col-sm-6">
+        <!--      <label for="name" class="font-size-h6 font-weight-bolder text-dark">نام و نام خانوادگی</label>-->
+        <input
+          [(ngModel)]="model.name"
+          class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+          type="text"
+          name="name"
+          placeholder="نام و نام خانوادگی"
+          formControlName="name"
+          autocomplete="off"
+          [ngClass]="{ 'is-invalid': registerForm.controls['name'].invalid }"
+        />
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'required',
+          message: 'لطفا نام خود را وارد کنید',
+          control: registerForm.controls['name']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'minLength',
+          message: 'نام و نام خانوادگی باید حداقل 10 کارکتر داشته باشد',
+          control: registerForm.controls['name']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'maxLength',
+          message: 'نام و نام خانوادگی باید حداکثر دارای 50 کاراکتر باشد',
+          control: registerForm.controls['name']
+        }"
+        ></ng-container>
+      </div>
+      <!--end::Form group-->
+      <!--begin::Form group-->
+      <div class="form-group col-lg-6 col-md-6 col-sm-6">
+        <!--      <label for="email" class="font-size-h6 font-weight-bolder text-dark">ایمیل</label>-->
+        <input
+          [(ngModel)]="model.email"
+          class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="ایمیل"
+          formControlName="email"
+          autocomplete="off"
+          [ngClass]="{ 'is-invalid': registerForm.controls['email'].invalid }"
+        />
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'required',
+          message: 'لطفا ایمیل خود را وارد کنید',
+          control: registerForm.controls['email']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'email',
+          message: 'ایمیل مورد نظر نامعتبر است',
+          control: registerForm.controls['email']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'maxLength',
+          message: 'ایمیل باید حداکثر دارای 320 کاراکتر باشد',
+          control: registerForm.controls['email']
+        }"
+        ></ng-container>
+      </div>
+      <!--end::Form group-->
+    </div>
+
+    <div class="row">
+      <!--start::Form group-->
+      <div class="form-group col-lg-6 col-md-6 col-sm-6">
+        <!--      <label for="company" class="font-size-h6 font-weight-bolder text-dark">شرکت</label>-->
+        <input
+          class="form-control form-control-solid h-auto py-7 px-6 rounded-lg "
+          type="text"
+          id="company"
+          placeholder="شرکت"
+          formControlName="company"
+          autocomplete="off"
+          [ngClass]="{ 'is-invalid': registerForm.controls['company'].invalid }"
+        />
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'required',
+          message: 'لطفا نام شرکت خود را وارد کنید',
+          control: registerForm.controls['company']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'minLength',
+          message: 'نام شرکت باید حداقل 5 کارکتر داشته باشد',
+          control: registerForm.controls['company']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'maxLength',
+          message: 'نام شرکت باید حداکثر دارای 20 کاراکتر باشد',
+          control: registerForm.controls['company']
+        }"
+        ></ng-container>
+      </div>
+      <!--end::Form group-->
+
+      <!--start::Form group-->
+      <div class="form-group col-lg-6 col-md-6 col-sm-6">
+        <!--      <label for="phone" class="font-size-h6 font-weight-bolder text-dark">تلفن</label>-->
+        <input
+          [(ngModel)]="model.phone"
+          class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="تلفن"
+          formControlName="tel"
+          autocomplete="off"
+          [ngClass]="{ 'is-invalid': registerForm.controls['tel'].invalid }"
+        />
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'required',
+          message: 'لطفا تلفن خود را وارد کنید',
+          control: registerForm.controls['tel']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'minLength',
+          message: 'تلفن باید حداقل 11 کارکتر داشته باشد',
+          control: registerForm.controls['tel']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'maxLength',
+          message: 'تلفن باید حداکثر دارای 11 کاراکتر باشد',
+          control: registerForm.controls['tel']
+        }"
+        ></ng-container>
+      </div>
+      <!--end::Form group-->
+    </div>
+
+    <div class="row">
+      <!--start::Form group-->
+      <div class="form-group col-lg-6 col-md-6 col-sm-6">
+        <!--      <label for="company" class="font-size-h6 font-weight-bolder text-dark">شرکت</label>-->
+        <input
+          [(ngModel)]="model.username"
+          class="form-control form-control-solid h-auto py-7 px-6 rounded-lg "
+          type="text"
+          id="username"
+          placeholder="نام کاربری"
+          formControlName="username"
+          autocomplete="off"
+          [ngClass]="{ 'is-invalid': registerForm.controls['username'].invalid }"
+        />
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'required',
+          message: 'لطفا نام شرکت خود را وارد کنید',
+          control: registerForm.controls['username']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'minLength',
+          message: 'نام شرکت باید حداقل 10 کارکتر داشته باشد',
+          control: registerForm.controls['username']
+        }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'maxLength',
+          message: 'نام شرکت باید حداکثر دارای 20 کاراکتر باشد',
+          control: registerForm.controls['username']
+        }"
+        ></ng-container>
+      </div>
+      <!--end::Form group-->
+
+      <!--start::Form group-->
+      <div class="form-group col-lg-6 col-md-6 col-sm-6">
+        <!--      <label for="phone" class="font-size-h6 font-weight-bolder text-dark">تلفن</label>-->
+        <input
+          [(ngModel)]="model.website"
+          class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+          type="text"
+          id="website"
+          placeholder="وب سایت"
+          formControlName="website"
+          autocomplete="off"
+          [ngClass]="{ 'is-invalid': registerForm.controls['website'].invalid }"
+        />
+        <ng-container
+          [ngTemplateOutlet]="formError"
+          [ngTemplateOutletContext]="{
+          validation: 'required',
+          message: 'لطفا وب سایت خود را وارد کنید',
+          control: registerForm.controls['website']
+        }"
+        ></ng-container>
+      </div>
+      <!--end::Form group-->
+    </div>
+
+    <div class="row">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6">
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+    </div>
+
+    <!--begin::Action-->
+    <div class="row">
+      <div class="d-flex pb-lg-0 pb-5 col-lg-6 col-md-6 col-sm-6">
+        <button
+          type="submit"
+          class="btn btn-primary font-weight-bolder font-size-h6 px-8 my-3"
+          (click)="onSubmitForm()"
+          [disabled]="registerForm.invalid">ثبت
+        </button>
+        <button
+          type="submit"
+          class="btn btn-secondary font-weight-bolder font-size-h6 px-8 my-3 mr-2"
+          [routerLink]="'/drivers-list'">انصراف</button>
+      </div>
+    </div>
+    <!--end::Action-->
+  </form>
+</div>
+
+<ng-template
+  #formError
+  let-control="control"
+  let-message="message"
+  let-validation="validation">
+  <ng-container *ngIf="control.hasError(validation) && (control.dirty || control.touched)">
+    <div class="d-flex fv-plugins-message-container">
+      <div class="fv-help-block">
+        {{ message }}
+      </div>
+    </div>
+  </ng-container>
+</ng-template>
