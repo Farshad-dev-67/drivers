@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {DriversList} from './drivers-list.interface';
-import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-drivers-list',
